@@ -22,7 +22,7 @@
       *@param $new_name to populate name attribute of class.
       *@param $new_empId to opulate empId attribute of class.
       */
-     public function  Employee($new_name,$new_empId )
+     public function  __construct($new_name,$new_empId )
      {
            $this->name = $new_name ;
            $this->empId = $new_empId ;
@@ -100,7 +100,7 @@ class SalariedEmployee Extends Employee
   *Constructor of Salaried employee.
   *
   */
-  public function SalariedEmployee($sal)
+  public function __construct($sal)
   {
        $this->salary  =$sal;
 
@@ -136,7 +136,7 @@ class HourlyEmployee Extends Employee
   *@param $hours worked by employee.
   *@param $pay contains pay per hour
   */
-  public function HourlyEmployee($hours , $pay)
+  public function __construct($hours , $pay)
   {
        $this->hoursWorked  =$hours;
        $this->payPerhour = $pay ;
@@ -154,14 +154,14 @@ class HourlyEmployee Extends Employee
   }
 }
 
-$obj[0] = new SalariedEmployee(50000);
-$obj[1] = new SalariedEmployee(70000);
-$obj[2] = new HourlyEmployee(50,5000);
-$obj[3] = new HourlyEmployee(50,5000);
+$employee =array(new HourlyEmployee(10,1400),new SalariedEmployee(60000));
 
-foreach ($obj as $key ) {
-    echo  $key->calcSalary()."<br>";
+
+foreach ($employee as $key ) {
+  echo  $key->calcSalary()."<br>";
 }
+
+
 
 
 
