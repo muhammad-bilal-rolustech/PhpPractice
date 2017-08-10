@@ -4,7 +4,7 @@
  {
    public function index($firstName = '',$lastName = '')
    {
-     echo $firstName. "  ".$lastName . "<br>";
+     echo $firstName. "   ss  ".$lastName . "<br>";
 
    }
    public function test()
